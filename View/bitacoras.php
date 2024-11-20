@@ -17,45 +17,45 @@ switch($accion){
     case"Agregar":
 
         $sentenciaSQL = $conexion->prepare("INSERT INTO extintores (Ubicacion, Tipo, Capacidad, f_mantenimiento, f_ph, Observaciones) VALUES (:Ubicacion, :Tipo, :Capacidad, :f_mantenimiento, :f_ph, :Observaciones);");
-        $sentenciaSQL->bindParam(':Ubicacion',$txtUbicacion);
-        $sentenciaSQL->bindParam(':Tipo',$txtTipo);
-        $sentenciaSQL->bindParam(':Capacidad',$floatCapacidad);
+        $sentenciaSQL->bindParam(':ubicacion',$txtUbicacion);
+        $sentenciaSQL->bindParam(':tipo',$txtTipo);
+        $sentenciaSQL->bindParam(':capacidad',$floatCapacidad);
         $sentenciaSQL->bindParam(':f_mantenimiento',$fecha_mantenimiento);
         $sentenciaSQL->bindParam(':f_ph',$fecha_PH);
-        $sentenciaSQL->bindParam(':Observaciones',$txtObservaciones);
+        $sentenciaSQL->bindParam(':observaciones',$txtObservaciones);
         $sentenciaSQL->execute();
 
        
         break;
         case"Actualizar":
-            $sentenciaSQL = $conexion->prepare("UPDATE extintores set observaciones=:observaciones, ubicacion=:ubicacion, f_mantenimiento=:f_mantenimiento, f_ph=:f_ph WHERE id =:id ");
+            $sentenciaSQL = $conexion->prepare("UPDATE extintores set observaciones=:observaciones, ubicacion=:ubicacion, f_mantenimiento=:f_mantenimiento, f_ph=:f_ph WHERE id_extintor =:id_extintor");
             $sentenciaSQL->bindParam(':observaciones',$txtObservaciones);
             $sentenciaSQL->bindParam(':ubicacion',$txtUbicacion);
             $sentenciaSQL->bindParam(':f_mantenimiento',$fecha_mantenimiento);
             $sentenciaSQL->bindParam(':f_ph',$fecha_PH);
-            $sentenciaSQL->bindParam(':id',$txtID);
+            $sentenciaSQL->bindParam(':id_extintor',$txtID);
             $sentenciaSQL->execute();
             break;
             case"Cancelar":
                 
                 break;
                 case"Seleccionar":
-                    $sentenciaSQL = $conexion->prepare("SELECT * FROM extintores WHERE id =:id ");
+                    $sentenciaSQL = $conexion->prepare("SELECT * FROM extintores WHERE id_extintor =:id");
                     $sentenciaSQL->bindParam(':id',$txtID);
                     $sentenciaSQL->execute();
                     $extintor = $sentenciaSQL->fetch(PDO::FETCH_LAZY);
 
-                    $txtUbicacion = $extintor['Ubicacion'];
-                    $txtTipo = $extintor['Tipo'];
-                    $floatCapacidad = $extintor['Capacidad'];
+                    $txtUbicacion = $extintor['ubicacion'];
+                    $txtTipo = $extintor['tipo'];
+                    $floatCapacidad = $extintor['capacidad'];
                     $fecha_mantenimiento = $extintor['f_mantenimiento'];
                     $fecha_PH = $extintor['f_ph'];
-                    $txtObservaciones = $extintor["Observaciones"];
+                    $txtObservaciones = $extintor["observaciones"];
 
 
                     break;
                     case"Borrar":
-                        $sentenciaSQL = $conexion->prepare("DELETE FROM extintores WHERE id=:id");
+                        $sentenciaSQL = $conexion->prepare("DELETE FROM extintores WHERE id_extintor =:id");
                         $sentenciaSQL->bindParam(':id',$txtID);
                         $sentenciaSQL->execute();
                         break;
@@ -93,7 +93,7 @@ $listaExtintores = $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
                 <div class="form-group">
                     <label for="floatCapacidad">Capacidad:</label>
-                    <input type="float" class="form-control" value="<?php echo $floatCapacidad ?>" name="floatCapacidad" id="floatCapacidad"  placeholder="Capacidad">
+                    <input type="text" class="form-control" value="<?php echo $floatCapacidad ?>" name="floatCapacidad" id="floatCapacidad"  placeholder="Capacidad">
                 </div>
 
                 <div class="form-group">
@@ -144,17 +144,17 @@ $listaExtintores = $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
                         <tbody>
                             <?php foreach($listaExtintores as $extintor){ ?>
                             <tr>
-                                <td><?php echo $extintor['id'];?></td>
-                                <td><?php echo $extintor['Ubicacion'];?></td>
-                                <td><?php echo $extintor['Tipo'];?></td>
-                                <td><?php echo $extintor['Capacidad'];?></td>
+                                <td><?php echo $extintor['id_extintor'];?></td>
+                                <td><?php echo $extintor['ubicacion'];?></td>
+                                <td><?php echo $extintor['tipo'];?></td>
+                                <td><?php echo $extintor['capacidad'];?></td>
                                 <td><?php echo $extintor['f_mantenimiento'];?></td>
                                 <td><?php echo $extintor['f_ph'];?></td>
-                                <td><?php echo $extintor['Observaciones'];?></td>
+                                <td><?php echo $extintor['observaciones'];?></td>
                                 
                                 <td>
                                     <form method="post">
-                                        <input type="hidden" name="txtID" id="txtID" value="<?php echo $extintor['id'];?>"/>
+                                        <input type="hidden" name="txtID" id="txtID" value="<?php echo $extintor['id_extintor'];?>"/>
                                         <input type="submit" name="accion" value="Seleccionar" class="btn btn-outline-primary btn-sm"/>
                                         <input type="submit" name="accion" value="Borrar" class="btn btn-outline-danger btn-sm"/>
                                     </form>
