@@ -125,7 +125,7 @@ $listaExtintores = $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 <div class="col-sm-5" style="width: 50%;">
     <div class="card" >
             <div class="card-header">
-                Bitacora de extintores
+                Bitacora de extintores /*agregar cliente-sucursal*/
                 </div>
                     <div class="card-body" style="width:100%;">
                         <table class="table table.responsive table-bordered table-hover table-sm">
