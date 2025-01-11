@@ -52,6 +52,16 @@ switch($accion){
                     $fecha_PH = $extintor['f_ph'];
                     $txtObservaciones = $extintor["observaciones"];
 
+                    /*$sentenciaSQL = $conexion->prepare("SELECT * FROM clientes WHERE id_cliente =:id");
+                    $sentenciaSQL->bindParam(':id',$txtID);
+                    $sentenciaSQL->execute();
+                    $extintor = $sentenciaSQL->fetch(PDO::FETCH_LAZY);
+                    
+                    $txtNombre = $cliente['razon_social'];
+
+
+
+                    */
 
                     break;
                     case"Borrar":
@@ -61,10 +71,10 @@ switch($accion){
                         break;
                         
 }
+/*$sentenciaSQL = $conexion->prepare("SELECT * FROM clientes WHERE id_cliente =:id");*/
 $sentenciaSQL = $conexion->prepare("SELECT * FROM extintores");
 $sentenciaSQL->execute();
 $listaExtintores = $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
-
 
 
 
@@ -125,7 +135,7 @@ $listaExtintores = $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 <div class="col-sm-5" style="width: 50%;">
     <div class="card" >
             <div class="card-header">
-                Bitacora de extintores /*agregar cliente-sucursal*/
+                Bitacora de extintores /*agregar cliente-sucursal*/<?php echo("Select * from clientes"); ?>
                 </div>
                     <div class="card-body" style="width:100%;">
                         <table class="table table.responsive table-bordered table-hover table-sm">
