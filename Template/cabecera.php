@@ -39,7 +39,7 @@
                 <div class="logo"><img src="../img/logo.png" alt=""></div>
                 <div id="menu">
                     <nav>
-                        <a href="index.html">INICIO</a>
+                        <a href="index.php">INICIO</a>
                         <a href=<?php echo $url;?>>SISTEMA</a>
                         <a href="">DEMO</a>
                         <a href="">COSTOS</a>

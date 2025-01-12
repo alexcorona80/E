@@ -136,6 +136,13 @@ main{
     position: relative;
  }
 
+ main .login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+
 #mensaje1{
     margin-top: 20px;
     position: relative;
@@ -374,14 +381,108 @@ footer span{
     text-align: center;
     /* No need for margin-top, as it's already at the bottom */
 }
-.login{
+.login {
+    width: 100%;
+    max-width: 400px; /* Limita el ancho para un mejor aspecto */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: black solid 1px;
+    border: 2px solid #4c1dbb; /* Ajuste del borde para un look más profesional */
+    border-radius: 10px; /* Bordes redondeados para suavizar el diseño */
+    padding: 20px;
+    background-color: #f9f9f9; /* Fondo suave para un mejor contraste */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    
+  }
+  
+  .login input {
+    border-radius: 5px; /* Ajuste de los bordes para inputs */
+    width: 100%; /* Usar todo el ancho disponible */
+    padding: 10px;
+    margin: 10px 0; /* Espaciado vertical */
+    border: 1px solid #ccc; /* Bordes más sutiles */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transición suave */
+  }
+  
+  .login input:hover,
+  .login input:focus {
+    border-color: #995aa6; /* Color de borde en hover/focus */
+    box-shadow: 0 0 5px rgba(153, 90, 166, 0.5); /* Sombra en hover/focus */
+  }
+  
+  .login button {
+    color: white; /* Color del texto */
+    background-color: #995aa6; /* Color de fondo */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    width: 100%; /* Usar todo el ancho disponible */
+    max-width: 150px; /* Limitar ancho máximo */
+    height: 40px; /* Ajustar altura */
+    margin: 10px 0; /* Espaciado superior e inferior */
+    cursor: pointer; /* Cambio de cursor */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+  }
+  
+  .login button:hover {
+    background-color: #7b3d8c; /* Color más oscuro en hover */
+    transform: scale(1.05); /* Pequeña ampliación en hover */
+  }
+  
+  .login button:active {
+    transform: scale(0.95); /* Reducción en click */
+  }
+  .registro {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #4c1dbb;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Espaciado superior para separarlo de otros elementos */
 }
 
+.registro input {
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.registro input:hover,
+.registro input:focus {
+    border-color: #4c1dbb;
+    box-shadow: 0 0 5px rgba(76, 29, 187, 0.5);
+}
+
+.registro button {
+    color: white;
+    background-color: #4c1dbb;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 150px;
+    height: 40px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.registro button:hover {
+    background-color: #3b148a;
+    transform: scale(1.05);
+}
+
+.registro button:active {
+    transform: scale(0.95);
+}
 /* Estilos generales para móviles */
 @media (max-width: 767px) {
     header {
@@ -572,5 +673,19 @@ footer span{
         .derechos_reservados span{
             font-size: smaller;
             text-align: center;
+        }
+        .registro {
+            padding: 15px;
+        }
+    
+        .registro button {
+            width: 100%;
+        }
+        .login {
+            padding: 15px;
+        }
+    
+        .login button {
+            width: 100%;
         }
 }

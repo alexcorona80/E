@@ -41,8 +41,8 @@
                 <div class="logo"><img src="img/logo.png" alt=""></div>
                 <div id="menu">
                     <nav>
-                        <a href="index.html">INICIO</a>
-                        <a href="View/login.php">SISTEMA</a>
+                        <a href="index.php">INICIO</a>
+                        <a href="login.php">SISTEMA</a>
                         <a href="">DEMO</a>
                         <a href="">COSTOS</a>
                     </nav>
