@@ -54,7 +54,7 @@
             <h1>
                 SISTEMA DE CONTROL DE RECARGA Y DOCUMENTACIÓN DE EQUIPOS CONTRA INCENDIOS
             </h1>
-            <button onclick="" class="btn_acceso">ACCEDER AL SISTEMA</button>
+          
         </div>
     </div>
     </header>
@@ -108,10 +108,7 @@
             <span>
                 EL SISTEMA MAS EFICIENTE PARA CONTROL DE CADUCIDADES Y SERVICIO AL CLIENTE EN EQUIPOS CONTRA INCENDIOS.
             </span>
-        <div id="botones">
-            <button><i class="fa fa-play-circle-o" aria-hidden="true"></i> VIDEO DEMO</button>
-            <button>SOLICITA DEMO</button>
-        </div>
+        
 
         </div>
 
@@ -121,21 +118,18 @@
                 <h5>DOCUMENTOS QUE CONTIENE EL SISTEMA</h5>
                 </div>
                 <div>
-                    <h6>Documento 1</h6>
-                    <span>Descripción del documento para que sirve y quien lo requiere.</span>
+                    <h6>Gestion de clientes y sucursales</h6>
+                    <span>Con nuestro sistema, puedes llevar una adecuada gestion de tus clientes y sus suscursales.</span>
                 </div>
                 <div>
-                    <h6>Documento 2</h6>
-                    <span>Descripción del documento para que sirve y quien lo requiere.</span>
+                    <h6>Bitacoras siempre disponibles</h6>
+                    <span>Podras llevar las bitácoras de tus clientes a todos lados, olvidate de llevarlas en papel.</span>
                 </div>
                 <div>
-                    <h6>Documento 3</h6>
-                    <span>Descripción del documento para que sirve y quien lo requiere.</span>
+                    <h6>Genera las ordenes de servicio al momento</h6>
+                    <span>Podras generar la ordenes de servcios al instante en formato PDF, !Listo para imprimir y firmar¡.</span>
                 </div>
-                <div>
-                    <h6>Documento 3</h6>
-                    <span>Descripción del documento para que sirve y quien lo requiere.</span>
-                </div>
+                
             </div>
         <div id="bombero_cansado">
             <img src="../img/cansado-bombero-barbudo-uniforme-sosteniendo-casco-protector-vista-frontal-rescatador-masculino-pelo-oscuro_7502-10182-Photoroom.png" alt="">
@@ -163,6 +157,7 @@
                     -Cambios  en la normativa de protección civil.
                     -Nuevas actualizaciones para negocios.
                     -Necesitas una API especilizada.
+                    
                 </span>
             </div>
             
